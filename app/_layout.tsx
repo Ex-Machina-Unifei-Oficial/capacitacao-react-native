@@ -1,37 +1,35 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
-import { useEffect } from 'react';
-import 'react-native-reanimated';
+// import { Stack, Tabs } from "expo-router";
+// import { Drawer } from "expo-router/drawer";
+// import { StatusBar, View } from "react-native";
 
-import { useColorScheme } from '@/hooks/useColorScheme';
+// export default function RootLayout() {
+//   return (
+//     <>
+//       <Stack
+//         screenOptions={{
+//           headerShown: true,
+//           headerStyle: { backgroundColor: "#def" },
+//           // statusBarColor: "#def",
+//           // statusBarStyle: "dark",
+//         }}
+//       >
+//         <Stack.Screen name="index" options={{ title: "Home" }} />
+//       </Stack>
+//       {/* <StatusBar
+//         animated={false}
+//         backgroundColor="#def"
+//         barStyle={"dark-content"}
+//         hidden={false}
+//       /> */}
+//     </>
+//   );
+// }
 
-// Prevent the splash screen from auto-hiding before asset loading is complete.
-SplashScreen.preventAutoHideAsync();
+// import { TabsNavigation } from "@/roteamento/tabs";
+// export default TabsNavigation;
 
-export default function RootLayout() {
-  const colorScheme = useColorScheme();
-  const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-  });
+// import { StackNavigation } from "@/roteamento/stack";
+// export default StackNavigation;
 
-  useEffect(() => {
-    if (loaded) {
-      SplashScreen.hideAsync();
-    }
-  }, [loaded]);
-
-  if (!loaded) {
-    return null;
-  }
-
-  return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-    </ThemeProvider>
-  );
-}
+// import { DrawerNavigation } from "@/roteamento/drawer";
+// export default DrawerNavigation;

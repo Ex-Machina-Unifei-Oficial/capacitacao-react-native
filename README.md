@@ -2,11 +2,11 @@
 
 ## Introdução
 
-React Native é uma ferramenta, baseada em JS e React, para desenvolvimento de aplicativos mobile criada pelo Facebook. O nome "Native" é devido sua principal proposta: permitir que desenvolvedores criem aplicativos com aspectos **nativos** para Android e iOS. Ou seja, os componentes declarados no código são transformados nos elementos próprios das plataformas, permitindo que tenham aparência e comportamento idênticos aos aplicativos próprios do Android ou iOS, além de um desempenho muito semelhante.
+React Native é uma ferramenta, baseada em JS e React, para desenvolvimento de aplicativos mobile criada pelo Facebook. O nome "Native" é devido sua principal proposta: permitir que desenvolvedores criem aplicativos com aspectos _nativos_ para Android e iOS. Ou seja, os componentes declarados no código são transformados nos elementos próprios das plataformas, permitindo que tenham aparência e comportamento idênticos aos aplicativos próprios do Android ou iOS, além de um desempenho semelhante.
 
 O exemplo mais básico disso, é com a própria View, que é o componente mais básico para a criação das interfaces em dispositivos mobile. No sistema iOS é traduzida para uma IView; no Android, em uma android.view; e por fim na Web, em uma div.
 
-Sim, na web. O React Native possui o slogan "Learn once, write anywhere" (Aprenda uma vez, escreva em qualquer lugar), dessa forma um dos seus principais propósitos é atender a maior parte de sistemas disponíveis, entre eles a própria web (embora seja muito mais comum e robusto aplicativos com frameworks baseados no React). Outros sistemas compatíveis com React Natives incluem Windows, Mac, Google Chrome, Mozila Firefox, etc. A grande vantagem é que não é preciso ter um código para cada plataforma, as traduções são feitas automaticamente pela biblioteca (No entanto, alguns casos exigem tratamentos diferentes, que também podem ser resolvivos pelo código).
+Sim, na web. O React Native possui o slogan "Learn once, write anywhere" (Aprenda uma vez, escreva em qualquer lugar), dessa forma um dos seus principais propósitos é atender a maior parte de sistemas disponíveis, entre eles a própria web (embora seja muito mais comum e robusto aplicativos com frameworks baseados no próprio React). Outros sistemas compatíveis com React Native incluem Windows, Mac, Google Chrome, Mozila Firefox e até algumas TVs. A grande vantagem é que não é preciso ter um código para cada plataforma e muito menos linguagens diferentes: aplicativos nativos Android utilizam Java e iOS swift, por exemplo. As traduções dos componentes são feitas automaticamente pelo React (No entanto, alguns casos exigem tratamentos diferentes, que também podem ser resolvivos pelo código).
 
 Por fim, assim como será comentado diversas vezes durante o material, o React Native possui uma comunidade ampla e um ecossistema com diversas bibliotecas e ferramentas, que podem ser facilmente integradas para adicionar funcionalidades aos aplicativos.
 
@@ -58,11 +58,11 @@ Expo é um framework para construção de aplicativos React Native com ferrament
 
 Caso queira se aventurar a criar um projeto sem o Expo, siga o [Tutorial disponível na Documentação](https://reactnative.dev/docs/set-up-your-environment).
 
-Além da facilidade para configurar o projeto, o Expo adiciona outras diversas funcionalidades, justamente por se tratar de um framework (semelhante ao NextJS). Por conta disso e seguindo a própria recomendação da Documentação do React Native, para essa capacitação, todos assuntos tratados serão utilizando o Expo.
+Além da facilidade para configurar o projeto, o Expo adiciona outras diversas funcionalidades, até mesmo fora do desenvolvimento em si (com o Deploy, por exemplo). Por conta disso e seguindo a própria recomendação da Documentação do React Native, para essa capacitação, os assuntos tratados serão utilizando o Expo. OBS: Nem tudo que for explicado depende do Expo, mas é bom deixar claro que foi tudo testado com uma aplicação que utiliza Expo.
 
 ### Instalação e Criação de um Novo Projeto
 
-OBS: Para a utilização do React Native e, consequentemente do Expo, também é necessário que o Node esteja instalado.
+Importante: Para a utilização do React Native e do Expo, também é necessário que o Node esteja instalado.
 
 Instalação do Expo CLI:
 
@@ -86,13 +86,13 @@ Primeiramente, assim como com o CRA, é possível passar alguns parâmetros a ma
 
 Para mais opções, consulte a Documentação.
 
-No momento da criação dessa capacitação, a opção padrão cria vários exemplos básicos para auxiliar no aprendizado. No entanto, para manter a simplicidade do material, esses exemplos não ficaram disponíveis nesse repositório. Nesse caso, é possível excluí-los através de um outro arquivo que também vem adicionado, para isso, rode:
+No momento da criação dessa capacitação, a opção padrão cria vários exemplos básicos para auxiliar no aprendizado. No entanto, para manter a simplicidade do material, esses exemplos não ficaram disponíveis nesse repositório. Nesse caso, é possível excluí-los através de um comando que também vem adicionado, para isso, rode:
 
 ```bash
 npm run reset-project
 ```
 
-Ao fazer isso, será criada uma nova raiz para o projeto (outra pasta app), com um exemplo mais simples, possibilitando excluir as outras pastas (app-example - a antiga pasta app, components, constants, hooks e scripts - lembre-se de remover o comando na seção de scripts dentro do package.json também). A vantagem de fazer isso é obter um projeto com navegação pré-configurada, mas sem muitas poluições. Alternativamente também é possível utilizar outros templates, como mencionado acima.
+Ao fazer isso, será criada uma nova raiz para o projeto (outra pasta app), com um exemplo mais simples, possibilitando excluir as outras pastas (app-example: a antiga pasta app; components; constants; hooks e scripts: lembre-se de remover o comando na seção de scripts dentro do package.json também). A vantagem de fazer isso é obter um projeto com navegação pré-configurada, mas sem muitas poluições. Alternativamente também é possível utilizar outros templates, como mencionado acima.
 
 Agora, com o projeto criado, precisamos saber como executá-lo:
 
@@ -108,15 +108,15 @@ O primeiro e mais recomendado é instalar o aplicativo **Expo Go** diretamente d
 npx expo start
 ```
 
-Então, abra o aplicativo e escaneie o QR Code que aparecerá no terminal (caso não veja, suba um pouco a tela). Então será feito o bundling do seu projeto e ele será carregado.
+Então, espere um pouco, abra o aplicativo e escaneie o QR Code que aparecerá no terminal (caso não veja, suba um pouco a tela). Então será feito o bundling do seu projeto e ele será carregado.
 
-Alguns atalhos aparecem logo abaixo do QR Code como `r` para recarregar ou `m` para habilitar ou desabilitar o menu (basta digitar as letras no terminal mesmo). Chacoalhar o celular também fará aparecer o menu, onde também é possível recarregar o projeto. Note que após bundling, próximo ao QR Code, aparecerá que o projeto está rodando em `https://localhost:8081` (ou algum IP no lugar de localhost), esta é a magia que faz o aplicativo funcionar: ele é hospedado na rede. Então certifique-se que o celular e o computador estejam conectados na mesma rede (para que o celular tenha acesso ao mesmo localhost do computador). Como curiosidade, já que o React Native tem suporte para Web, também é possível abrir o localhost no próprio navegador e ver como o aplicativo se comporta. Obs: No momento da criação desse material, o Expo não possui um tratamento muito bom para quando o celular e o computador estão conectados em redes diferentes, aparece somente uma mensagem "Something went wrong", mas, na maioria das vezes, o problema é exatamente isso.
+Alguns atalhos aparecem logo abaixo do QR Code como `r` para recarregar ou `m` para habilitar ou desabilitar o menu (basta digitar as letras no terminal mesmo). Chacoalhar o celular também fará aparecer o menu, onde também é possível recarregar o projeto. Note que após o bundling, próximo ao QR Code, aparecerá que o projeto está rodando em `https://localhost:8081` (ou algum IP no lugar de localhost), esta é a magia que faz o aplicativo funcionar: ele é hospedado na rede. Então certifique-se que o celular e o computador estejam conectados na mesma rede (para que o celular tenha acesso ao localhost do computador). Como curiosidade, já que o React Native tem suporte para Web, também é possível abrir o localhost no próprio navegador e ver como o aplicativo se comporta. Obs: No momento da criação desse material, o Expo não possui um tratamento muito bom para quando o celular e o computador estão conectados em redes diferentes, aparece somente uma mensagem "Something went wrong", mas, na maioria das vezes, o problema é justamente esse.
 
-Teoricamente o React Native e o Expo possuem Hot Reload, o que permite que o aplicativo recarregue e atualize automaticamente após alguma alteração no código, semelhante ao React. No entanto, por conta do ambiente mais sensível, às vezes é necessário recarregar manualmente o aplicativo, principalmente ao alterar rotas. Em casos mais extremos, com utilização de recursos nativos ou alterações na configuração do projeto, por exemplo, é preciso encerrá-lo e realizar o bundling novamente. Obs: a primeira vez é sempre mais demorada, a partir da segunda, algumas informações são cacheadas para acelerar o processo. Contudo, como nem tudo são flores no mundo da programação, isso também pode causar problemas. Então, caso alguma alteração nas configurações pareça não estar sendo efetivada, utilize o comando `npx expo start --clear`, para excluir os dados em cachê.
+Teoricamente o React Native e o Expo possuem Hot Reload, o que permite que o aplicativo recarregue e atualize automaticamente após alguma alteração no código, semelhante ao React. No entanto, por conta do ambiente mais sensível, às vezes é necessário recarregar manualmente o aplicativo (comando `r` ou opção de "Reload" no menu), principalmente ao alterar rotas. Em casos mais extremos, com utilização de recursos nativos ou alterações na configuração do projeto, por exemplo, é preciso encerrá-lo e realizar o bundling novamente. Obs: a primeira vez é sempre mais demorada, a partir da segunda, algumas informações são cacheadas para acelerar o processo. Contudo, como nem tudo são flores no mundo da programação, isso também pode causar problemas. Então, caso alguma alteração nas configurações pareça não estar sendo efetivada, utilize o comando `npx expo start --clear`, para excluir os dados em cachê antes de rodar o projeto.
 
 #### Conexão USB
 
-Utilizar o Expo Go é muito útil para realizar testes de conceito e aprender a mexer no ambiente, no entanto possui algumas limitações com relação ao acesso de recursos nativos do celular, justamente por passar por essa ponte na rede. Então, para desbloquear esses recursos, rode o comando:
+Utilizar o Expo Go é muito útil para realizar testes de conceito e aprender a mexer no ambiente, contudo possui algumas limitações com relação ao acesso de recursos nativos do celular, justamente por passar por essa ponte na rede. Então, para "desbloquear" esses recursos, rode o comando:
 
 ```bash
 npx expo prebuild
@@ -124,7 +124,11 @@ npx expo prebuild
 
 Ele irá criar as pastas `ios` e `android` na raiz do projeto, o que irá permitir a manipulação de pacotes específicos de cada ambiente (o Expo tem ferramentas para gerenciar isso também).
 
-Agora é preciso utilizar a segunda maneira de executar o projeto. Para isso, habilite o modo de desenvolvedor no celular. O passo a passo varia de acordo com cada celular, mas no geral, é preciso apertar diversas vezes na versão do Android. Nas configurações de desenvolvedor, habilite a opção "depuração por USB" ou algo do tipo.
+Agora é preciso utilizar a segunda maneira de executar o projeto. Para isso, habilite o modo de desenvolvedor no celular. O passo a passo varia de acordo com cada celular.
+
+Para sistemas Android, no geral, é preciso apertar diversas vezes na versão do Android, então aparecerá a mensagem "Você agora é um desenvolvedor", ou algo semelhante. Pesquise por "Configurações de desenvolvedor" e habilite a opção "depuração por USB".
+
+OBS: Assim como em outras partes de configuração de ambiente ou especifidades de cada sistema, durante essa capacitação o foco maior é para Android. Devido ao fato de algumas opções para iOS necessitarem um Mac e eu não ter um iPhone para confirmar a utilização. Porém, caso utilize um iPhone e alguma coisa não dê certo, entre em contato que a gente tenta resolver.
 
 Então, conecte o celular no computador e execute:
 
@@ -137,15 +141,15 @@ Agora é preciso dar permissão, através de uma caixa de diálogo no celular, p
 
 IMPORTANTE: Renomear o projeto é bem trabalhoso, pois o nome é espalhado em diversos arquivos de configuração, então evite ao máximo.
 
-IMPORTANTE: Desinstalar o aplicativo baixado para o ambiente de desenvolvimento também pode gerar bugs, pois podem ficar resquícios da instalação, que fazem com que o aplicativo não seja instalado novamente, então evite ao máximo também.
+IMPORTANTE: Desinstalar o aplicativo baixado para o ambiente de desenvolvimento também pode gerar bugs, pois podem ficar resquícios da instalação, que fazem com que o aplicativo não possa ser instalado novamente, então evite ao máximo também (Porém, caso já tenha feito e esteja com problemas, consulte a seção de Deploy ao final da capacitação).
 
 ### Utilizando o Simulador
 
-Como essa etapa depende de softwares externos para a execução, sujeitos a diversas mudanças de configuração, é recomendado que sempre sigam a [Documentação do Expo](https://docs.expo.dev/get-started/set-up-your-environment/?platform=android&device=simulated&mode=development-build) para conferirem como configurar devidamente o ambiente. Porém, vale notar que os softwares mais utilizados até então são Android Studio, para android, e Xcode, para iOS (no entanto é necessário um mac para baixá-lo, legalmente)
+Como essa etapa depende de softwares externos para a execução, sujeitos a diversas mudanças de configuração, é recomendado que sempre sigam a [Documentação do Expo](https://docs.expo.dev/get-started/set-up-your-environment/?platform=android&device=simulated&mode=development-build) para conferirem como configurar devidamente o ambiente. Porém, vale notar que os softwares mais utilizados até então são Android Studio, para android, e Xcode, para iOS (no entanto é necessário um Mac para baixá-lo, legalmente).
 
 ## Componentes
 
-Agora, com o ambiente devidamente configurado e pronto para o desenvolvimento propriamente dito, é necessário esclarecer inicialmente quais aspectos do React Native se alteram em relação ao React e quais aspectos se mantêm.
+Agora, com o ambiente devidamente configurado e pronto para o desenvolvimento propriamente dito, é necessário esclarecer quais aspectos do React Native se alteram em relação ao React e quais aspectos se mantêm.
 
 A parte inicial de componentes pode ser aplicada da mesma forma, sendo elas: Composição de componentes (utilização do jsx, children, utilização do map, etc), Props e Integração com TypeScript, além dos Hooks do React.
 
@@ -229,7 +233,7 @@ export const ScrollViewExample = () => {
 };
 ```
 
-- **KeyboardAvoidingView**: Automaticamente ajusta sua altura para que o conteúdo continue visível quando o teclado for acionado. Muito útil para inputs e formulários, porém evite colocar muitas children para evitar bugs.
+- **KeyboardAvoidingView**: Automaticamente ajusta sua altura para que o conteúdo continue visível quando o teclado for acionado. Muito útil para inputs e formulários, porém evite colocar muitas children e unidades de tamanho fixo para evitar bugs.
 
 ```jsx
 import { View, Text, KeyboardAvoidingView, TextInput } from "react-native";
@@ -417,7 +421,7 @@ export const TextInputExample = () => {
 
 #### **Switch**
 
-Input específico para valores booleanos. Aparência semelhante ao componente eletrônico switch, para outras aparências e interação com múltiplos elementos (checkbox, radiobutton, etc) é necessário utilizar componentes da comunidade (vasta opção) ou criar os próprios.
+Input específico para valores booleanos. Aparência semelhante ao componente eletrônico switch, para outras aparências e interação com múltiplos elementos (checkbox, radiobutton, etc) é necessário utilizar componentes da comunidade ou criar os próprios.
 
 ```jsx
 import { useState } from "react";
@@ -493,7 +497,7 @@ export const ButtonExample = () => (
 
 #### **Pressable**
 
-Wrapper (tradução direta: embrulhador, tradução semântica: "envolvedor") para adicionar gerenciamento de eventos de tocar a tela, através da API _Pressability_ do React Native. Muito comumente utilizado para criar botões com aparência mais customizável e/ou suporte a diferente eventos de toque:
+Wrapper (tradução direta: embrulhador, tradução semântica: "envolvedor") para adicionar gerenciamento de eventos de toque na tela, através da API _Pressability_ do React Native. Muito comumente utilizado para criar botões com aparência mais customizável e/ou suporte a diferente eventos de toque:
 
 - **onPressIn**: Acionado sempre o usuário tocar na área determinada.
 - **onPressOut**: Acionado quando o usuário deixar de tocar na área determinada.
@@ -587,7 +591,7 @@ export const PressableExample = () => {
 
 #### **Touchable**
 
-Na verdade é uma "família" de componentes Wrapper, que recebem exatamente uma child e adicionam eventos de toque nela, além de algumas funcionalidades secundárias. No entanto, segundo a documentação do React Native, não é garantido que terão suporte no futuro, então prefira utilizar Pressable e fazer manualmente os efeitos secundários.
+Na verdade é uma "família" de componentes Wrapper, que recebem exatamente uma child e adicionam eventos de toque nela, além de algumas funcionalidades secundárias. No entanto, segundo a documentação do React Native, não é garantido que terão suporte no futuro, então prefira utilizar Pressable e fazer manualmente os efeitos secundários, que não são lá muito difíceis de implementar.
 
 - **TouchableOpacity**: Ao pressionar, diminui a opacidade do elemento fornecido.
 
@@ -759,7 +763,7 @@ const styles = StyleSheet.create({
 
 ### Componentes de Lista (List Views)
 
-Versões mais completas da ScrollView. Além de permitir a rolagem de elementos, apenas carrega os que estão na tela, permitindo uma performance mais otimizada com muitos elementos, e adicionam algumas outras funcionalidades. Os dados dos elementos devem ser passados por prop em forma de vetor (data), assim como o componente que recebe a informação (renderItem). Boa alternativa para a utilização de maps.
+Versões mais completas e específicas da ScrollView. Além de permitir a rolagem de elementos, apenas carrega os que estão na tela, permitindo uma performance mais otimizada com muitos elementos, e adicionam algumas outras funcionalidades. Os dados dos elementos devem ser passados por prop em forma de vetor (data), assim como o componente que recebe a informação (renderItem). Boa alternativa para a utilização de maps.
 
 #### **FlatList**
 
@@ -1026,7 +1030,7 @@ const styles = StyleSheet.create({
 
 #### **StatusBar**
 
-Fornece controle da StatusBar do celular, com suporte a iOS e Android. É a área normalmente no topo, próximo à câmera frontal, que mostra notificações, conexão wi-fi, bateria, recursos, etc. Via de regra é sempre bom colocar pelo menos algum elemento, nem que seja somente para dar o padding necessário para que as telas não se baguncem com as informações do celular.
+Fornece controle da StatusBar do celular, com suporte a iOS e Android. É a área no topo, próximo à câmera frontal, que mostra notificações, conexão wi-fi, bateria, recursos, etc. Via de regra é sempre bom colocar pelo menos algum elemento, nem que seja somente para dar o padding necessário para que as telas não se baguncem com as informações do celular.
 
 ```jsx
 import { useState } from "react";
@@ -1078,7 +1082,7 @@ export const StatusBarExample = () => {
 
 #### **Comunidade**
 
-Por padrão, o React Native não possui tantos componentes (existem outros fora os apresentados) e já descontinuou alguns. Isso se deve por conta da vasta comunidade de apoio, já mencionada diversas vezes ao longo da capacitação. Portanto, caso seja necessário algum componente específico que deveria estar disponível, muito possivelmente tem uma solução da comunidade para isso, basta procurar.
+Por padrão, o React Native não possui tantos componentes (existem outros fora os apresentados) e já delegou alguns. Isso se deve por conta da vasta comunidade de apoio, já mencionada diversas vezes ao longo da capacitação. Portanto, caso seja necessário algum componente específico que deveria estar disponível, muito possivelmente tem uma solução da comunidade ou do próprio Expo para isso.
 
 ## Estilização
 
@@ -1154,7 +1158,7 @@ export const StyledComponent = () => (
 );
 ```
 
-Suas principais desvantagens são a criação de nomes para as versões estilizadas dos componentes e o desacoplamento de estilo e estrutura (controverso é algo bom ou ruim). Porém, apesar de um pouco trabalhoso, é possível estilizar componentes de terceiros, além de outras ferramentas mais avançadas como estilização condicional (muito comum), passagem de props através da estilização (muito útil para props específicas) e criação de temas robustos e escaláveis.
+Suas principais desvantagens são a criação de nomes para as versões estilizadas dos componentes e o desacoplamento de estilo e estrutura (controverso é algo bom ou ruim). Porém, apesar de um pouco trabalhoso, é possível estilizar componentes de terceiros, além de outras ferramentas mais avançadas como estilização condicional (muito comum), passagem de props através da estilização e criação de temas robustos e escaláveis.
 
 ### Nativewind
 
@@ -1197,11 +1201,11 @@ export function App() {
 
 ## Roteamento e Multiplas Telas
 
-Uma coisa que foi abordada na capacitação de React é o gerenciamento de rotas, ou seja, o controle de múltiplas telas. Apesar do React possui um sistema de roteamento, ele não é tão robusto quanto o do NextJS (framework utilizado para web), dessa maneira, não é tão essencial. Porém, para desenvolvimento mobile, um sistema robusto de roteamento é essencial, pois raramente um aplicativo terá somente uma tela, então quase sempre acabará sendo necessário uma implementação. Por causa disso, o Expo possui o próprio sistema de roteamento, parecido com o NextJS.
+Uma coisa que foi não abordada na capacitação de React é o gerenciamento de rotas, ou seja, o controle de múltiplas telas. Apesar do React possui um sistema de roteamento, ele não é tão robusto quanto o do NextJS (framework utilizado para web), dessa maneira, não é tão essencial. Porém, para desenvolvimento mobile, um sistema robusto de roteamento é essencial, pois raramente um aplicativo terá somente uma tela, então quase sempre acabará sendo necessário uma implementação. Por causa disso, o Expo possui o próprio sistema de roteamento, parecido com o NextJS.
 
 Nas últimas versões do Expo, foi aderida a arquitetura de utilizar uma pasta `app`, em que qualquer subpasta (ou componente) declarado dentro será convertido em uma nova tela. Além disso, é possível criar um arquivo `_layout.tsx` para um controle mais preciso das propriedades da tela.
 
-O arquivo `index.tsx` dentro de `app` é a tela primeira tela carregada ao abrir o aplicativo. Nele não é necessária nenhuma configuração específica de rota, apenas exportar o componente com default:
+O arquivo `index.tsx` dentro de `app` é a primeira tela carregada ao abrir o aplicativo. Nele não é necessária nenhuma configuração específica de rota, apenas exportar o componente com default (assim como qualquer outra página ou layout):
 
 ```jsx
 import { useRouter } from "expo-router";
@@ -1352,6 +1356,8 @@ Para utilizar a navegação Drawer, diferentemente dos outros casos, é preciso 
 ```bash
 npx expo install @react-navigation/drawer react-native-gesture-handler react-native-reanimated
 ```
+
+OBS: Como o próprio nome sugere, a biblioteca _gesture handler_ gerencia e detecta gestos do usuário, como, por exemplo, arrastar o dedo na parte lateral do celular para abrir a gaveta de rotas.
 
 ```jsx
 // _layout.tsx
@@ -1542,7 +1548,7 @@ OBS: Lembre-se sempre de usar export default para layouts e páginas!
 
 ## Persistência de Dados Async Storage
 
-É muito comum que aplicativos guardem algumas pequenas informações no próprio dispositivo do usuário. Por exemplo, qual conta está logada no momento. Isso é muito bom para evitar que toda vez que queira utilizar o aplicativo seja necessário fazer o login de novo.
+É muito comum que aplicativos guardem algumas pequenas informações no próprio dispositivo do usuário, por exemplo, qual conta está logada no momento. Isso é muito bom para evitar que toda vez que queira utilizar o aplicativo seja necessário inserir uma mesma informação novamente.
 
 No React Native, podemos utilizar essa funcionalidade através do AsyncStorage. Ela é uma API antigamente fornecida pelo próprio React Native (agora mantida pela comunidade) feita justamente para armazenar dados localmente no dispositivo do usuário, de maneira assíncrona. Além do login do usuário, também podem ser salvos alguns estados simples ou configurações e preferências do usuário.
 
@@ -1552,9 +1558,9 @@ Como não é mais fornecida na base do React Native, é preciso instalar o pacot
 npm install @react-native-async-storage/async-storage
 ```
 
-Para trabalhar com o AsyncStorage, basta importá-lo e utilizar suas funções dentro de um bloco try-catch. A interface da API para guardar e retornar as informações é bem simples: cada informação deve ter uma chave e um valor, assim como uma variável em linguagens de programação ou um objeto JS, sendo possível salvar informações em chaves diferentes dentro da mesma aplicação. A única limitação é que o valor deve ser sempre uma string, no entanto isso é muito facilmente contornável.
+Para trabalhar com o AsyncStorage, basta importá-lo e utilizar suas funções dentro de um bloco try-catch. A interface da API para guardar e retornar as informações é bem simples: cada informação deve ter uma chave e um valor, assim como uma variável em linguagens de programação ou um objeto JS. É possível salvar informações em chaves diferentes dentro da mesma aplicação. A única limitação é que o valor deve ser sempre uma string, no entanto isso é muito facilmente contornável.
 
-É uma boa prática que o nome da chave comece com o nome do aplicativo, seguido de um nome significativo para o valor, por exemplo: `app-ex-machina-gesto` ou `app-ex-machina-preferencias`. Isso é feito para garantir que não ocorra colisões entre informações salvas por diferentes aplicativos, dependendo do sistema alvo.
+É uma boa prática que o nome da chave comece com o nome do aplicativo, seguido de um nome significativo para o valor, por exemplo: `@app-ex-machina:gesto` ou `@app-ex-machina:preferencias`. Isso é feito para garantir que não ocorra colisões entre informações salvas por diferentes aplicativos, dependendo do gerenciamento do sistema alvo.
 
 ```jsx
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -1635,13 +1641,15 @@ const getObject = async (key: string) => {
 
 O AsyncStorage é adequado para armazenar pequenos volumes de dados e não deve ser utilizado para substituir o Banco de Dados nem armazenamentos em nuvem, mesmo porque cada dispositivo terá seus dados próprios. Também é interessante evitar armazenar dados sensíveis sem criptografia, pois o AsyncStorage não oferece essa funcionalidade nativamente.
 
+Por fim, uma prática muito comum para evitar essa mesma dependência e blocos try-catch em diferentes partes do código, é criar um hook customizado useStorage ou useAsyncStorage.
+
 ## Permissões
 
-Por fim, o último aspecto importante para abordar com relação ao desenvolvimento proprimente dito de um aplicativo em React Native são as permissões.
+O último aspecto importante para abordar com relação ao desenvolvimento proprimente dito de um aplicativo em React Native são as permissões.
 
 Alguns recursos de hardware ou software do celular precisam ser autorizados para que o aplicativo tenha acesso. Isso é muito bom para ajudar a manter o dispositivo seguro, pois se, por exemplo, seu aplicativo de anotações solicita acesso à câmera (mesmo ele não tendo a funcionalidade de guardar fotos nas anotações), é um tanto quanto suspeito. Entretanto, isso também dificulta um pouquinho a vida dos desenvolvedores, que agora precisam realizar a solicitação antes de utilizar o recurso.
 
-Essa operação parece bem direta ao ponto e no exemplo escolhido de fato será, contudo nem sempre é tão fácil por conta da maneira que diferentes sistemas gerenciam as permissões. A utilização do BLE (Bluetooth Low Energy), por exemplo, necessita permissões diferentes no Android e no iOS, fazendo com que o código precise identificar qual é o sistema e realizar as permissões respectivas.
+Essa operação parece bem direta ao ponto e no exemplo escolhido de fato será, contudo nem sempre é tão fácil por conta da maneira que diferentes sistemas gerenciam as permissões. A utilização do BLE (Bluetooth Low Energy), por exemplo, necessita permissões diferentes no Android e no iOS, fazendo com que o código precise identificar qual é o sistema (essa é a parte fácil) e realizar as permissões respectivas.
 
 No exemplo abaixo, será tratado como utilizar a câmera do celular. Para isso, inicie instalando o pacote:
 
@@ -1803,7 +1811,7 @@ Esse comando criará um documento `eas.json` com as configurações sobre o buil
   },
 ```
 
-Desse modo, ao realizar o build do aplicativo no ambiente de produção android, será gerado o apk que pode ser distribuído internamente. Para publicar o aplicativo nas lojas oficiais do Android ou Apple é preciso mais algumas burocracias: uma conta de desenvolvedor Google Play ou Apple, respectivamente. Portanto, até o momento seguimos com a primeira opção, para isso, rode o comando:
+Desse modo, ao realizar o build do aplicativo no ambiente de produção android, será gerado o apk que pode ser distribuído internamente. Para publicar o aplicativo nas lojas oficiais do Android ou Apple é preciso mais algumas burocracias: uma conta de desenvolvedor Google Play ou Apple, respectivamente, o que infelizmente pode ser pago. Portanto, até o momento seguimos com a primeira opção, para isso, rode o comando:
 
 ### Build
 
@@ -1811,17 +1819,17 @@ Desse modo, ao realizar o build do aplicativo no ambiente de produção android,
 eas build -p android --profile production
 ```
 
-Agora é a hora de parar para tomar um cafézinho, porque o processo de build é um pouco demorado.Quando terminar o processo, irá aparecer um link, onde é possível baixar o arquivo do aplicativo.
+Agora é a hora de parar para tomar um cafézinho, porque o processo de build é um pouco demorado. Quando terminar o processo, irá aparecer um link, onde é possível baixar o arquivo do aplicativo.
 
 Agora acontecerá uma combinação de 4 possibilidades:
 
 #### **1 - O arquivo já está no formato APK**
 
-Se esse é o caso, é um dos melhores cenários, pois basta transferir o arquivo para o celular (pelo Whatsapp mesmo é possível) ou abrir o link diretamente pelo celular e baixar. Em ambos os casos, devem aparecer algumas mensagens sobre a segurança do arquivo, pois é um apk de terceiros então não passa por todas as verificações das lojas oficiais de aplicativos. Mas no geral, a gente confia no aplicativo desenvolvido por nós mesmos. Depois é só clicar no arquivo pelo celular que ele vai inicializar a instalação, depois de mais algumas mensagens de segurança. Dependendo do quanto o seu celular é chato com isso, pode dar um pouco de dor de cabeça essa instalação.
+É um dos melhores cenários, pois basta transferir o arquivo para o celular (pelo Whatsapp mesmo é possível) ou abrir o link diretamente pelo celular e baixar. Em ambos os casos, devem aparecer algumas mensagens sobre a segurança do arquivo, pois é um apk de terceiros então não passa por todas as verificações das lojas oficiais de aplicativos. Mas no geral, a gente confia no aplicativo desenvolvido por nós mesmos. Depois é só clicar no arquivo pelo celular que ele vai inicializar a instalação, após mais algumas mensagens de segurança. Dependendo do quanto o seu celular é chato com isso, pode dar um pouco de dor de cabeça essa instalação.
 
 #### **2 - O arquivo está no formato tar.gz**
 
-Ainda não fiz deploys suficientes para ter certeza do que causa o arquivo vir nesse formato. Porém, já aconteceu então vale a pena abordar o caso. Até o momento acredito que possa ser um padrão antigo mesmo ou quando a aplicação precisa do _prebuild_ comentado anteriormente.
+Ainda não fiz deploys suficientes para ter certeza do que causa o arquivo vir nesse formato. Porém já aconteceu, então vale a pena abordar o caso. Até o momento acredito que possa ser um padrão antigo mesmo ou quando a aplicação precisa do _prebuild_ comentado anteriormente.
 
 Essa extensão se refere a um arquivo compactado e existem dois modos para instalar o arquivo gerado no build:
 
@@ -1831,7 +1839,7 @@ A segunda maneira é baixar o arquivo pelo computador, abrir o terminal de coman
 
 #### **3 - O aplicativo de desenvolvimento já está instalado**
 
-Como dito anteriormente, algumas vezes é preciso realizar o prebuild do aplicativo para habilitar algumas opções durante o desenvolvimento. Nesse caso, o aplicativo precisa ser instalado no celular de fato, mesmo que a versão de desenvolvedor dele (que funciona somente quando o ambiente está em execução no computador). No entanto, ao tentar instalar o aplicativo no ambiente de produção (que funciona de maneira autônoma), alguns sistemas dizem que o aplicativo já está instalado e não deixa proceder com o processo.
+Ao realizar o prebuild, o aplicativo precisa ser instalado no celular de fato, mesmo que somente a versão de desenvolvedor (que funciona apenas quando o ambiente está em execução no computador). No entanto, ao tentar instalar o aplicativo no ambiente de produção (que funciona de maneira autônoma), alguns sistemas dizem que o aplicativo já está instalado e não deixa proceder com o processo.
 
 Desinstalar o aplicativo através do próprio celular nem sempre funciona, pois, como dito nas outras seções, podem ficar alguns resquícios, então é necessário remover todos os vestígios do celular. Para isso, no caso de aplicações android, é necessário utilizar o **adb** (Android Debug Bridge). Caso não esteja instalado no seu computador, utilize o comando `npm install -g adb`. Em seguida, conecte seu celular pelo USB e permita a transmissão de arquivos (certifique-se que o modo de desenvolvedor já está ativo).
 

@@ -8,6 +8,14 @@ export function CameraExample() {
   // Nesse caso, o Expo faz o gerenciamento das permissões através de um Hook (prática muito comum)
   const [permission, requestPermission] = useCameraPermissions();
 
+  function toggleCameraFacing() {
+    setFacing((current) => (current === "back" ? "front" : "back"));
+  }
+
+  function toggleShowCamera() {
+    setShowCamera((current) => !current);
+  }
+
   if (!permission) {
     // carregando as permissões da câmera
     return <View />;
@@ -23,14 +31,6 @@ export function CameraExample() {
         <Button onPress={requestPermission} title="grant permission" />
       </View>
     );
-  }
-
-  function toggleCameraFacing() {
-    setFacing((current) => (current === "back" ? "front" : "back"));
-  }
-
-  function toggleShowCamera() {
-    setShowCamera((current) => !current);
   }
 
   return (

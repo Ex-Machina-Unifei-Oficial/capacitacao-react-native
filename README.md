@@ -81,7 +81,7 @@ Simples assim, você terá um projeto pronto para desenvolver. Porém, alguns de
 Primeiramente, assim como com o CRA, é possível passar alguns parâmetros a mais para a criação do projeto, como:
 
 - `--template default`: Opção padrão, inclui expo router e TypeScript, além de alguns componentes pré-prontos.
-- `--template blank`: Instala o mínimo necessário para a aplicação, utiilzando JavaScript.
+- `--template blank`: Instala o mínimo necessário para a aplicação, utilizando JavaScript.
 - `--template blank-typescript`: O mínimo necessário, porém com TypeScript.
 
 Para mais opções, consulte a Documentação.
@@ -502,7 +502,7 @@ Wrapper (tradução direta: embrulhador, tradução semântica: "envolvedor") pa
 - **onPressIn**: Acionado sempre o usuário tocar na área determinada.
 - **onPressOut**: Acionado quando o usuário deixar de tocar na área determinada.
 - **onPress**: Acionado após os eventos onPressIn e onPressOut forem detectados na área determinada. Basicamente, facilita o processo de detectar um click simples.
-- **onPressLongPress**: Acionado após 500ms (valor alterável) do evento onPressIn sem a ativação do evento onPressOut. Ou seja, facilita o processo de detectar um click longo. Obs: o evento onPressOut ainda é ativado quando o usuário solta o botão.
+- **onLongPress**: Acionado após 500ms (valor alterável) do evento onPressIn sem a ativação do evento onPressOut. Ou seja, facilita o processo de detectar um click longo. Obs: o evento onPressOut ainda é ativado quando o usuário solta o botão.
 
 Para mais detalhes, consulte a [Documentação](https://reactnative.dev/docs/pressable).
 
